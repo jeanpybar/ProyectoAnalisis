@@ -75,7 +75,7 @@
 
             <div class="content">
                 <div class="title m-b-md">
-                    Laravel tg
+                    Laravel pancho
                 </div>
 
                 <div class="links">
