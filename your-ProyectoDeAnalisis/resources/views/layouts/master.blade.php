@@ -6,6 +6,8 @@
 		<link rel="icon" 
 			type="image/png" 
 			href="http://icons.iconarchive.com/icons/iron-devil/ids-3d-icons-20/32/Ico-zilla-icon.png">
+
+		<link rel="stylesheet" href="public/css/estiloLogin.css">
 			
 			<!-- Latest compiled and minified CSS -->
 		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
