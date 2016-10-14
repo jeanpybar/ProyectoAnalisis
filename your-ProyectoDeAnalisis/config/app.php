@@ -2,6 +2,13 @@
 
 return [
 
+   'limitador' => [
+     'timpoLimite' => 1,
+     'maximosIntentos' => 3,
+     ],
+
+
+
     /*
     |--------------------------------------------------------------------------
     | Application Name

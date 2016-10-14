@@ -11,23 +11,32 @@
 |
 */
 
-Route::get('/', function () {
-    return view('principal');
-});
+// Route::get('/', function () {
+//     return view('principal');
+// });
 
-    Route::get('/signup', [
-        'uses' => 'AuthController@getPagRegistro',
-        'as' => 'signup',
-        'middleware' => 'roles',
-        'roles' => ['Secretaria','Admin']
-        ]);
+   Route::group(['middleware' => 'web'], function () {
 
-    Route::post('/signup', [
-        'uses' => 'AuthController@postPagRegistro',
-        'as' => 'signup',
-        'middleware' => 'roles',
-        'roles' => ['Secretaria','Admin']
-        ]);
+
+    Route::get('/', [
+        'middleware' => 'roles',  
+        function () {
+            return view('principal');
+        }])->name('main');
+     
+    // Route::get('/signup', [
+    //     'uses' => 'AuthController@getPagRegistro',
+    //     'as' => 'signup',
+    //     'middleware' => 'roles',
+    //     'roles' => ['Docente','Admin']
+    //     ]);
+
+    // Route::post('/signup', [
+    //     'uses' => 'AuthController@postPagRegistro',
+    //     'as' => 'signup',
+    //     'middleware' => 'roles',
+    //     'roles' => ['Docente','Admin']
+    //     ]);
 
     Route::get('/signin', [
         'uses' => 'Auth\LoginController@getLogeo',
@@ -38,3 +47,19 @@ Route::get('/', function () {
         'uses' => 'Auth\LoginController@postLogeo',
         'as' => 'signin'
         ]);
+
+    Route::post('/signinErr', [
+        'uses' => 'Auth\ErrorAuthController@getPagLogeoError',
+        'as' => 'signinErr'
+        ]);
+
+    Route::get('/signinErr', [
+        'uses' => 'Auth\ErrorAuthController@getPagLogeoError',
+        'as' => 'signinErr'
+        ]);
+
+      Route::get('/logout', [
+        'uses' => 'Auth\LoginController@logout',
+        'as' => 'logout'
+        ]);
+});

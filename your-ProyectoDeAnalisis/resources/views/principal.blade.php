@@ -1,4 +1,6 @@
 @extends('layouts.master')
 @section('content')
-Home
+@if(Auth::check())
+Conectado: {{Auth::user()->first_name}}
+@endif
 @endsection
