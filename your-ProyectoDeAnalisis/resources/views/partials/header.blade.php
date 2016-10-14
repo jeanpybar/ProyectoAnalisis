@@ -32,18 +32,18 @@
         <div class="collapse navbar-collapse navbar-ex1-collapse">
             <ul class="nav navbar-nav">
                 <li class="active"><a href="#">Panel</a></li>
+               @if(Auth::check())
                 <li><a href="#">Dispositivos</a></li>
                 <li><a href="#">Usuarios</a></li>
                 <li><a href="#">Prestamos</a></li>
                 <li><a href="#">Laboratorios</a></li>
                 <li><a href="#">Reportes</a></li>
+                @endif
             </ul>
            
             <ul class="nav navbar-nav navbar-right">
             @if(Auth::check())
           <li><a href="/logout">Desconectarse</a></li>           
-            @else
-          <li><a href="/signin">Ingresar</a></li>
             @endif
                 
                 <li><a href="#">Registrarse</a></li>
