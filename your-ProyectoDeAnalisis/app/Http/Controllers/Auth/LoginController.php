@@ -36,4 +36,18 @@ class LoginController extends Controller
     {
         $this->middleware('guest', ['except' => 'logout']);
     }
+
+     public function getLogeo()
+    {
+        return view('Authenticacion.Login', ['errors' => 'NA']);
+    }
+
+      public function postLogeo(Request $request)
+    {
+            
+            return redirect()->route('main');
+
+         }
+            
+            
 }
